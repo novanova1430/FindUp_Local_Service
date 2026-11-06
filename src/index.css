@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Exclusive 4-Color Palette from User Image:
+     #ABC270 (Sage Olive Green)
+     #FEC868 (Warm Honey Gold)
+     #FDA769 (Warm Apricot Peach)
+     #473C33 (Deep Roasted Espresso Charcoal)
+     #FAF8F2 (Warm Linen Cream Background)
+  */
+  --color-palette-green: #ABC270;
+  --color-palette-yellow: #FEC868;
+  --color-palette-peach: #FDA769;
+  --color-palette-espresso: #473C33;
+  --color-palette-cream: #FAF8F2;
+
+  /* Primary Brand (Mustard Honey Gold - #FEC868 with Apricot Peach - #FDA769 on hover) */
+  --color-blue-50: #FFFDF5;
+  --color-blue-100: #FFF8E1;
+  --color-blue-200: #FEF0BE;
+  --color-blue-300: #FEE395;
+  --color-blue-400: #FED67E;
+  --color-blue-500: #FEC868;
+  --color-blue-600: #FEC868; /* Mustard Honey Gold Button Fill */
+  --color-blue-700: #FDA769; /* Apricot Peach Button Hover */
+  --color-blue-800: #E59353;
+  --color-blue-900: #473C33;
+  --color-blue-950: #2B231D;
+
+  /* Honey Yellow / Gold (#FEC868) */
+  --color-amber-50: #FFFDF5;
+  --color-amber-100: #FFF9E5;
+  --color-amber-200: #FEF0C2;
+  --color-amber-300: #FEE398;
+  --color-amber-400: #FEC868;
+  --color-amber-500: #FEC868;
+  --color-amber-600: #FDA769;
+  --color-amber-700: #C28723;
+  --color-amber-800: #996414;
+  --color-amber-900: #473C33;
+
+  /* Apricot Peach / Coral (#FDA769) */
+  --color-orange-50: #FFF8F3;
+  --color-orange-100: #FFEFE3;
+  --color-orange-200: #FEDCC5;
+  --color-orange-300: #FDC39E;
+  --color-orange-400: #FDA769;
+  --color-orange-500: #FDA769;
+  --color-orange-600: #E68541;
+  --color-orange-700: #C46424;
+  --color-orange-800: #9E4913;
+  --color-orange-900: #473C33;
+
+  /* Deep Roasted Espresso & Warm Linen Canvas (#473C33 & #FAF8F2) */
+  --color-slate-50: #FAF8F2;
+  --color-slate-100: #F3EFE7;
+  --color-slate-200: #E7E1D6;
+  --color-slate-300: #D4CCC0;
+  --color-slate-400: #B7ACA0;
+  --color-slate-500: #93867A;
+  --color-slate-600: #74675B;
+  --color-slate-700: #5C5046;
+  --color-slate-800: #473C33;
+  --color-slate-900: #473C33;
+  --color-slate-950: #2B231D;
+
+  /* Emerald mapped to Honey Gold / Apricot for buttons */
+  --color-emerald-50: #FFFDF5;
+  --color-emerald-100: #FFF8E1;
+  --color-emerald-200: #FEF0BE;
+  --color-emerald-300: #FEE395;
+  --color-emerald-400: #FED67E;
+  --color-emerald-500: #FEC868;
+  --color-emerald-600: #FEC868;
+  --color-emerald-700: #FDA769;
+  --color-emerald-800: #E59353;
+  --color-emerald-900: #473C33;
+}
+
+body {
+  background-color: #FAF8F2;
+  color: #473C33;
+}
+
+/* Explicit Button Styling: Honey Gold (#FEC868) with Apricot Peach (#FDA769) on hover and Espresso text */
+button.bg-blue-600,
+a.bg-blue-600,
+button.bg-emerald-600,
+a.bg-emerald-600,
+button.bg-amber-600,
+a.bg-amber-600 {
+  background-color: #FEC868 !important;
+  color: #473C33 !important;
+  font-weight: 700 !important;
+}
+
+button.bg-blue-600:hover,
+a.bg-blue-600:hover,
+button.bg-emerald-600:hover,
+a.bg-emerald-600:hover,
+button.bg-amber-600:hover,
+a.bg-amber-600:hover,
+.hover\:bg-blue-700:hover,
+.hover\:bg-emerald-700:hover,
+.hover\:bg-amber-700:hover {
+  background-color: #FDA769 !important;
+  color: #473C33 !important;
+}
+
+button.bg-blue-600 svg,
+a.bg-blue-600 svg,
+button.bg-emerald-600 svg,
+a.bg-emerald-600 svg {
+  color: #473C33 !important;
+}
+
+/* Custom scrollbars and subtle micro-utilities */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

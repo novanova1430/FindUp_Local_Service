@@ -1,0 +1,1869 @@
+# MASTER PROMPT: FIXFLOW – FULL STACK LOCAL SERVICE BOOKING & MANAGEMENT PLATFORM
+
+## 1. YOUR ROLE
+
+Act as a senior full-stack software architect, Python Django developer, React developer, PostgreSQL database designer, UI/UX designer, security engineer and QA tester.
+
+Build a complete, professional, responsive, interactive web application called **FixFlow – Local Service Booking & Management Platform**.
+
+This is a real-world portfolio project for a Full Stack Python Developer fresher. It must demonstrate practical software development skills, business logic, database design, authentication, REST APIs, frontend development and testing.
+
+Do not create only a landing page or static UI prototype.
+
+Build the application as a connected system with three independent roles:
+
+1. Customer
+2. Service Provider
+3. Administrator
+
+Every role must have its own registration/login flow, permissions, dashboard, navigation, pages and functional operations.
+
+I am a beginner with approximately 10–15% understanding of full-stack development. Therefore, write understandable, organized and maintainable code. Use meaningful filenames, component names, variable names and comments. Do not unnecessarily compress code into one file.
+
+Explain important architectural decisions in the project documentation.
+
+---
+
+# 2. PROJECT OVERVIEW
+
+## Project name
+FixFlow
+
+## Tagline
+"Find Trusted Professionals. Book Services. Get Things Done."
+
+## Problem statement
+
+People often struggle to find reliable service providers in their local area. They may have difficulty comparing service prices, checking provider availability, scheduling appointments, tracking bookings and knowing whether a service provider is trustworthy.
+
+Service providers also face difficulties managing customer requests, appointments, availability, payments and reviews.
+
+FixFlow solves these problems through a centralized service booking platform.
+
+Customers can search for services, compare providers, book appointments, make demo payments and track their service requests.
+
+Service providers can manage their profiles, services, schedules, booking requests and earnings.
+
+Administrators can manage users, approve providers, monitor bookings, manage categories and analyze platform activity.
+
+## Project objectives
+
+- Create a real-world service marketplace.
+- Implement three different user roles.
+- Develop secure registration and authentication.
+- Build REST APIs.
+- Implement relational database management.
+- Create a booking and appointment system.
+- Prevent duplicate appointment bookings.
+- Implement payment simulation with transaction records.
+- Create customer, provider and administrator dashboards.
+- Build a responsive user interface.
+- Demonstrate complete end-to-end workflows.
+
+## Important business rule
+
+A customer must not be able to access provider or administrator functionality without the appropriate permissions.
+
+A provider must not be able to approve their own account.
+
+An administrator must be able to approve or reject provider applications.
+
+All important actions must be validated on the backend when the Django API is connected.
+
+---
+
+# 3. TECHNOLOGY STACK
+
+Use the following technologies.
+
+### Frontend
+
+- React.js
+- JavaScript ES6+
+- HTML5
+- CSS3
+- Bootstrap 5
+- React Router
+- Axios
+- Bootstrap Icons or Lucide icons
+- Chart.js or Recharts
+
+### Backend
+
+- Python
+- Django
+- Django REST Framework
+- Django REST Framework Simple JWT
+- Django CORS Headers
+- Django ORM
+
+### Database
+
+- PostgreSQL
+- Relational database design
+- Foreign keys
+- Database constraints
+- Transactions
+
+### Testing and development tools
+
+- Visual Studio Code
+- Postman
+- Git
+- GitHub
+
+### Deployment preparation
+
+Prepare the project so that it can later be deployed using Render for the backend and a suitable frontend hosting service.
+
+Do not deploy the application now.
+
+Do not introduce Java as a second backend language. Use JavaScript for React and Python for Django.
+
+## Important Google AI Studio implementation instruction
+
+Google AI Studio Build mode uses a React frontend and Node.js server runtime.
+
+Therefore:
+
+A. Generate the React application so that it works in the AI Studio preview.
+
+B. Use a well-organized demo data service with persistent browser storage for the preview version.
+
+C. Create a separate, complete Django backend source-code structure and implementation plan for local development in VS Code.
+
+D. Do not pretend that Node.js is Django.
+
+E. Do not claim that PostgreSQL is connected unless an actual database connection exists.
+
+F. Keep frontend API services separate from components. Provide a configurable API base URL so that the React application can later connect to the Django REST API.
+
+G. Use a clearly defined demo mode and backend mode. Make the current mode visible in the application's development settings.
+
+H. The demo must not require real payment credentials or real customer money.
+
+---
+
+# 4. UI/UX DESIGN SYSTEM
+
+Create a premium, modern service marketplace design.
+
+The application should look like a real funded startup product, not a college project template.
+
+## Visual direction
+
+Use:
+- Primary color: Deep navy blue (#172554).
+- Secondary color: Royal blue (#2563EB).
+- Background: Soft off-white (#F8FAFC).
+- Cards: White (#FFFFFF).
+- Text: Dark slate (#1E293B).
+- Secondary text: (#64748B).
+- Success: Green.
+- Warning: Amber.
+- Error: Red.
+
+Use subtle gradients only where they improve the interface.
+
+Use:
+- Clean typography.
+- Consistent spacing.
+- Rounded cards.
+- Soft shadows.
+- Professional buttons.
+- Clear visual hierarchy.
+- Consistent iconography.
+- Good empty states.
+- Loading skeletons.
+- Toast notifications.
+- Confirmation dialogs.
+
+Avoid:
+- Excessive animations.
+- Overcrowded dashboards.
+- Too many gradients.
+- Unnecessary decorative elements.
+- Inconsistent button sizes.
+- Fake navigation links.
+- Broken images.
+- Placeholder text everywhere.
+
+## Responsive requirements
+
+The complete application must work on:
+
+- Desktop: 1440px and above.
+- Laptop: 1024px–1439px.
+- Tablet: 768px–1023px.
+- Mobile: 320px–767px.
+
+Desktop:
+Use a professional sidebar and top navigation.
+
+Mobile:
+Use a compact header, responsive navigation and mobile-friendly cards.
+
+All forms, tables, calendars, buttons, modals and charts must adapt to screen size.
+
+---
+
+# 5. PUBLIC WEBSITE PAGES
+
+Create the following public-facing pages.
+
+## PAGE 1: Landing / Home Page
+
+Route: /
+
+Sections:
+
+1. Header
+   - FixFlow logo.
+   - Home.
+   - Explore Services.
+   - How It Works.
+   - About Us.
+   - Contact.
+   - Login button.
+   - Get Started button.
+
+2. Hero section
+   - Large heading: "Find the Right Professional for Every Job."
+   - Supporting description.
+   - Search input.
+   - Service category selector.
+   - Location input.
+   - Search button.
+   - Professional service-related hero image.
+
+3. Popular service categories
+   Include:
+   - Home Cleaning.
+   - Plumbing.
+   - Electrical Repair.
+   - AC Repair.
+   - Painting.
+   - Appliance Repair.
+   - Carpentry.
+   - Pest Control.
+
+   Each category must have an image or icon and a working link.
+
+4. Featured providers
+   Display provider cards with:
+   - Profile image.
+   - Provider name.
+   - Service type.
+   - Location.
+   - Rating.
+   - Number of reviews.
+   - Starting price.
+   - Availability indicator.
+   - View Profile button.
+
+5. How FixFlow Works
+   - Search for a service.
+   - Choose a professional.
+   - Book an appointment.
+   - Get your service completed.
+
+6. Why choose FixFlow?
+   - Verified professionals.
+   - Transparent pricing.
+   - Easy scheduling.
+   - Booking tracking.
+   - Customer reviews.
+
+7. Customer testimonials.
+
+8. Call-to-action section.
+
+9. Footer
+   - About.
+   - Services.
+   - Contact.
+   - Privacy Policy.
+   - Terms and Conditions.
+   - Social media links.
+
+All buttons must navigate to their appropriate pages.
+
+## PAGE 2: Explore Services
+
+Route: /services
+
+Features:
+- Display all service categories.
+- Search services by name.
+- Filter by category.
+- Filter by price.
+- Filter by rating.
+- Filter by location.
+- Sort by popularity.
+- Sort by price.
+- Sort by highest rating.
+
+Each service card must show:
+- Service image.
+- Service name.
+- Short description.
+- Starting price.
+- Available providers.
+- View Details button.
+
+Include pagination or load-more functionality.
+
+## PAGE 3: Service Details
+
+Route: /services/:serviceId
+
+Display:
+- Service name.
+- Service images.
+- Description.
+- Included work.
+- Excluded work.
+- Estimated duration.
+- Starting price.
+- Available providers.
+- Customer reviews.
+- Frequently asked questions.
+
+Add a Book Now button.
+
+Clicking Book Now should take the customer to the provider selection or booking process.
+
+## PAGE 4: Provider Listing
+
+Route: /providers
+
+Features:
+- Provider search.
+- Location filter.
+- Rating filter.
+- Price filter.
+- Service filter.
+- Availability filter.
+
+Provider cards must contain:
+- Profile image.
+- Full name.
+- Professional title.
+- Experience.
+- Location.
+- Rating.
+- Number of completed jobs.
+- Verification badge.
+- Price range.
+- View Profile button.
+
+## PAGE 5: Provider Public Profile
+
+Route: /providers/:providerId
+
+Sections:
+- Profile photo.
+- Full name.
+- Professional introduction.
+- Verification status.
+- Experience.
+- Skills.
+- Services offered.
+- Service prices.
+- Working hours.
+- Service locations.
+- Portfolio/gallery.
+- Ratings.
+- Customer reviews.
+- Book Appointment button.
+
+A customer must only be able to book an approved provider.
+
+---
+
+# 6. AUTHENTICATION AND REGISTRATION
+
+Create separate registration experiences for customers and service providers.
+
+## PAGE 6: Customer Registration
+
+Route: /register/customer
+
+Fields:
+- Full name.
+- Email address.
+- Mobile number.
+- Password.
+- Confirm password.
+- Address.
+- City.
+- State.
+- Pincode.
+- Terms and conditions checkbox.
+
+Validation:
+- Required field validation.
+- Valid email format.
+- Valid phone number.
+- Password strength.
+- Password confirmation.
+- Duplicate email prevention.
+- Clear validation messages.
+
+After successful registration:
+- Create customer account.
+- Redirect to customer login or authenticated customer dashboard.
+- Display success notification.
+
+## PAGE 7: Service Provider Registration
+
+Route: /register/provider
+
+Fields:
+- Full name.
+- Email.
+- Mobile number.
+- Password.
+- Confirm password.
+- Professional title.
+- Primary service category.
+- Experience in years.
+- Description.
+- Service location.
+- Full address.
+- City.
+- State.
+- Pincode.
+- Profile photo.
+- Identity verification document upload.
+- Terms acceptance.
+
+After submission:
+- Create provider application.
+- Set account status to PENDING.
+- Do not allow booking acceptance yet.
+- Display a message: "Your application has been submitted and is waiting for administrator approval."
+
+## PAGE 8: Login
+
+Route: /login
+
+Design:
+- Professional split-screen layout.
+- FixFlow branding.
+- Login form.
+- Email field.
+- Password field.
+- Show/hide password.
+- Remember me option.
+- Forgot password link.
+- Login button.
+- Customer registration link.
+- Provider registration link.
+
+After successful authentication:
+- Customer → Customer Dashboard.
+- Approved Provider → Provider Dashboard.
+- Pending Provider → Application Status page.
+- Rejected Provider → Application Status page.
+- Administrator → Admin Dashboard.
+
+Use role-based route protection.
+
+## PAGE 9: Forgot Password
+
+Route: /forgot-password
+
+Features:
+- Email entry.
+- Validation.
+- Password reset request.
+- Demo reset flow with a clearly marked test token or development-only reset link.
+
+Never expose password information.
+
+---
+
+# 7. CUSTOMER APPLICATION
+
+Create a completely independent customer dashboard.
+
+Route prefix: /customer
+
+Layout:
+- Left sidebar on desktop.
+- Top header.
+- Notification icon.
+- Profile dropdown.
+- Mobile navigation.
+
+## CUSTOMER PAGE 1: Dashboard
+
+Route: /customer/dashboard
+
+Show:
+- Welcome message with customer name.
+- Total bookings.
+- Pending bookings.
+- Confirmed bookings.
+- Completed bookings.
+- Cancelled bookings.
+- Upcoming appointment.
+
+Dashboard sections:
+- Recent bookings.
+- Upcoming appointments.
+- Recommended services.
+- Favorite providers.
+- Quick booking button.
+
+Use charts where useful.
+
+All statistics must be calculated from the customer's booking records, not hardcoded numbers.
+
+## CUSTOMER PAGE 2: Browse Services
+
+Route: /customer/services
+
+Features:
+- Search services.
+- Filter categories.
+- Filter price range.
+- Filter provider ratings.
+- Filter availability.
+- View provider details.
+- Add provider to favorites.
+
+## CUSTOMER PAGE 3: Booking Wizard
+
+Route: /customer/bookings/new
+
+Create a multi-step booking process.
+
+STEP 1 – Select Service
+- Choose a category.
+- Choose a specific service.
+
+STEP 2 – Select Provider
+- Show approved providers only.
+- Show price.
+- Show ratings.
+- Show experience.
+- Show availability.
+
+STEP 3 – Select Date
+- Calendar interface.
+- Disable past dates.
+- Show available days.
+
+STEP 4 – Select Time
+- Display available appointment slots.
+- Do not show occupied slots as available.
+
+STEP 5 – Enter Service Address
+- Customer name.
+- Contact number.
+- Address.
+- City.
+- Pincode.
+- Additional instructions.
+
+STEP 6 – Booking Summary
+- Selected service.
+- Selected provider.
+- Date.
+- Time.
+- Service charge.
+- Platform fee.
+- Total amount.
+
+STEP 7 – Confirm Booking
+- Confirm button.
+- Create booking record.
+- Show booking reference number.
+- Redirect to booking details.
+
+Important:
+Prevent double booking. Validate availability again when confirming the booking. The final backend must enforce this using database transactions and appropriate constraints or locking.
+
+## CUSTOMER PAGE 4: My Bookings
+
+Route: /customer/bookings
+
+Create tabs:
+- All.
+- Pending.
+- Confirmed.
+- In Progress.
+- Completed.
+- Cancelled.
+
+Each booking card or table row should show:
+- Booking reference.
+- Service.
+- Provider.
+- Appointment date.
+- Appointment time.
+- Amount.
+- Booking status.
+- View Details button.
+
+Actions:
+- View booking.
+- Cancel booking when permitted.
+- Reschedule booking when permitted.
+- Pay pending amount.
+- Leave a review after completion.
+
+## CUSTOMER PAGE 5: Booking Details
+
+Route: /customer/bookings/:bookingId
+
+Display:
+- Booking reference.
+- Service information.
+- Provider profile.
+- Customer address.
+- Appointment date and time.
+- Payment information.
+- Booking status timeline.
+- Special instructions.
+
+Show relevant actions based on booking status.
+
+## CUSTOMER PAGE 6: Favorites
+
+Route: /customer/favorites
+
+Features:
+- List saved providers.
+- Remove favorites.
+- View provider profile.
+- Book a service.
+
+## CUSTOMER PAGE 7: Reviews
+
+Route: /customer/reviews
+
+Features:
+- List completed services.
+- Submit ratings from 1 to 5 stars.
+- Write review.
+- Edit review according to business rules.
+- Display previously submitted reviews.
+
+Only customers with completed bookings may review that booking's provider.
+
+## CUSTOMER PAGE 8: Notifications
+
+Route: /customer/notifications
+
+Show:
+- Booking confirmation.
+- Booking acceptance.
+- Booking rejection.
+- Rescheduling.
+- Completion.
+- Payment status updates.
+
+Include mark-as-read and mark-all-as-read functions.
+
+## CUSTOMER PAGE 9: Profile and Settings
+
+Route: /customer/profile
+
+Sections:
+- Personal information.
+- Profile photo.
+- Phone number.
+- Address.
+- City.
+- State.
+- Pincode.
+- Change password.
+- Account settings.
+
+Allow customers to edit their profile and save changes.
+
+---
+
+# 8. SERVICE PROVIDER APPLICATION
+
+Create a separate provider portal.
+
+Route prefix: /provider
+
+A provider must be approved by the administrator before using the full provider dashboard.
+
+## PROVIDER PAGE 1: Provider Dashboard
+
+Route: /provider/dashboard
+
+Display:
+- Welcome message.
+- Total bookings.
+- Pending requests.
+- Confirmed bookings.
+- Completed jobs.
+- Cancelled bookings.
+- Total demo earnings.
+- Average rating.
+
+Sections:
+- New booking requests.
+- Today's appointments.
+- Upcoming appointments.
+- Recent customer reviews.
+- Earnings chart.
+
+Use real demo database records or calculated demo data.
+
+## PROVIDER PAGE 2: Booking Requests
+
+Route: /provider/requests
+
+Display incoming booking requests.
+
+Show:
+- Customer name.
+- Service.
+- Requested date.
+- Requested time.
+- Address.
+- Price.
+- Special instructions.
+
+Actions:
+- Accept request.
+- Reject request.
+- View details.
+
+On acceptance:
+- Update booking status to CONFIRMED.
+- Notify the customer.
+
+On rejection:
+- Update booking status to REJECTED.
+- Notify the customer.
+
+Do not allow providers to accept overlapping appointments.
+
+## PROVIDER PAGE 3: My Bookings
+
+Route: /provider/bookings
+
+Tabs:
+- All.
+- Pending.
+- Confirmed.
+- In Progress.
+- Completed.
+- Rejected.
+- Cancelled.
+
+Actions:
+- View details.
+- Start service.
+- Mark as completed.
+- Cancel where permitted.
+
+Use valid booking status transitions.
+
+## PROVIDER PAGE 4: Manage Services
+
+Route: /provider/services
+
+Features:
+- Add a new service.
+- Edit service.
+- Delete service when permitted.
+- Set service price.
+- Add description.
+- Select service category.
+- Add service duration.
+- Upload service images.
+- Set active/inactive status.
+
+Provider services must be associated with their provider account.
+
+## PROVIDER PAGE 5: Availability Management
+
+Route: /provider/availability
+
+Features:
+- Weekly availability.
+- Working days.
+- Start time.
+- End time.
+- Break times.
+- Appointment duration.
+- Slot interval.
+- Block unavailable dates.
+- View booked time slots.
+
+Do not allow a provider to create availability that overlaps with existing confirmed bookings.
+
+## PROVIDER PAGE 6: Earnings
+
+Route: /provider/earnings
+
+Display:
+- Total completed service value.
+- Platform fees.
+- Net demo earnings.
+- Pending payments.
+- Transaction history.
+- Monthly earnings chart.
+
+Make it clear that these are demo financial records, not actual payouts.
+
+## PROVIDER PAGE 7: Customer Reviews
+
+Route: /provider/reviews
+
+Features:
+- Average rating.
+- Rating distribution.
+- Customer reviews.
+- Service-specific feedback.
+- Review date.
+
+## PROVIDER PAGE 8: Provider Profile
+
+Route: /provider/profile
+
+Allow editing:
+- Name.
+- Profile image.
+- Professional introduction.
+- Experience.
+- Skills.
+- Service areas.
+- Contact details.
+- Portfolio.
+
+Display verification status.
+
+Sensitive identity documents must never be publicly visible.
+
+## PROVIDER PAGE 9: Notifications
+
+Route: /provider/notifications
+
+Display:
+- New booking requests.
+- Booking accepted or rejected.
+- Appointment reminders.
+- Customer cancellations.
+- Completed booking updates.
+
+## PROVIDER PAGE 10: Provider Settings
+
+Route: /provider/settings
+
+Features:
+- Change password.
+- Account settings.
+- Notification preferences.
+- Availability preferences.
+- Account status.
+
+---
+
+# 9. ADMINISTRATOR APPLICATION
+
+Create a separate administrator portal.
+
+Route prefix: /admin
+
+Only authorized administrator accounts may access it.
+
+Do not allow users to become administrators through public registration.
+
+## ADMIN PAGE 1: Admin Dashboard
+
+Route: /admin/dashboard
+
+Show:
+- Total customers.
+- Total providers.
+- Pending provider applications.
+- Approved providers.
+- Rejected providers.
+- Total bookings.
+- Pending bookings.
+- Completed bookings.
+- Cancelled bookings.
+- Total demo transaction value.
+
+Charts:
+- Monthly bookings.
+- Booking status distribution.
+- Service category popularity.
+- Monthly transaction volume.
+
+Recent activity:
+- New customer registrations.
+- Provider applications.
+- Recent bookings.
+- Recent complaints.
+
+All dashboard statistics must be based on database queries or demo records.
+
+## ADMIN PAGE 2: Customer Management
+
+Route: /admin/customers
+
+Features:
+- List customers.
+- Search by name.
+- Search by email.
+- Filter by registration date.
+- View customer profile.
+- View customer bookings.
+- Activate or deactivate account where permitted.
+
+Use pagination.
+
+## ADMIN PAGE 3: Provider Management
+
+Route: /admin/providers
+
+Tabs:
+- All Providers.
+- Pending.
+- Approved.
+- Rejected.
+- Suspended.
+
+Features:
+- Search providers.
+- View profiles.
+- View submitted documents securely.
+- Approve application.
+- Reject application with reason.
+- Suspend provider.
+- Reactivate provider.
+
+Record administrator actions in an audit log.
+
+## ADMIN PAGE 4: Provider Approval Details
+
+Route: /admin/providers/:providerId
+
+Display:
+- Provider information.
+- Professional experience.
+- Services.
+- Contact information.
+- Service location.
+- Verification document status.
+- Application submission date.
+
+Actions:
+- Approve.
+- Reject.
+- Request additional information.
+
+Never display sensitive verification documents through public URLs.
+
+## ADMIN PAGE 5: Service Category Management
+
+Route: /admin/categories
+
+Features:
+- Create category.
+- Edit category.
+- Delete category if no dependent records prevent it.
+- Add category image.
+- Activate or deactivate category.
+
+Initial categories:
+1. Home Cleaning.
+2. Plumbing.
+3. Electrical Repair.
+4. AC Repair.
+5. Painting.
+6. Appliance Repair.
+7. Carpentry.
+8. Pest Control.
+
+## ADMIN PAGE 6: Service Management
+
+Route: /admin/services
+
+Features:
+- View all services.
+- Search services.
+- Filter by category.
+- Filter by provider.
+- Activate/deactivate service.
+- Review service information.
+
+## ADMIN PAGE 7: Booking Management
+
+Route: /admin/bookings
+
+Features:
+- View all bookings.
+- Search booking reference.
+- Filter by status.
+- Filter by date.
+- Filter by customer.
+- Filter by provider.
+- View complete booking details.
+
+Administrators can investigate booking issues but should not silently alter payment records.
+
+## ADMIN PAGE 8: Payment Management
+
+Route: /admin/payments
+
+Show:
+- Transaction ID.
+- Booking reference.
+- Customer.
+- Provider.
+- Amount.
+- Payment method.
+- Payment status.
+- Transaction date.
+
+Allow administrators to inspect transaction records.
+
+Do not provide an unrestricted button to edit successful payment transactions.
+
+## ADMIN PAGE 9: Reviews and Complaints
+
+Route: /admin/reviews
+
+Features:
+- View customer reviews.
+- View reported reviews.
+- Review complaints.
+- Record investigation results.
+- Hide reviews that violate platform policy.
+- Maintain an audit trail.
+
+## ADMIN PAGE 10: Reports and Analytics
+
+Route: /admin/reports
+
+Include:
+- Booking reports.
+- Customer registration reports.
+- Provider approval reports.
+- Service popularity reports.
+- Demo revenue reports.
+
+Add date filters and CSV export.
+
+## ADMIN PAGE 11: Admin Settings
+
+Route: /admin/settings
+
+Features:
+- Administrator profile.
+- Change password.
+- Platform settings.
+- Booking cancellation policy.
+- Platform fee configuration.
+- Audit log.
+
+---
+
+# 10. BOOKING BUSINESS LOGIC
+
+This is one of the most important parts of the application.
+
+Implement the following booking statuses:
+
+- PENDING
+- CONFIRMED
+- REJECTED
+- IN_PROGRESS
+- COMPLETED
+- CANCELLED
+
+Create valid status transitions.
+
+Example:
+
+PENDING → CONFIRMED or REJECTED.
+
+CONFIRMED → IN_PROGRESS or CANCELLED.
+
+IN_PROGRESS → COMPLETED.
+
+Do not allow arbitrary status changes.
+
+## Booking validation
+
+1. Customer must be authenticated.
+2. Provider must be approved and active.
+3. Service must be active.
+4. Requested date must not be in the past.
+5. Requested slot must be available.
+6. Provider cannot have overlapping confirmed appointments.
+7. Booking price must be calculated from trusted server-side service data.
+8. Customer cannot access another customer's booking.
+9. Provider can only access their own bookings.
+10. Admin can access platform-wide bookings.
+
+Use database transactions and row-level locking where appropriate to prevent race conditions.
+
+Do not depend only on React validation.
+
+---
+
+# 11. PAYMENT SYSTEM – DEMO MODE
+
+Create a payment interface for demonstration purposes.
+
+Payment methods:
+- UPI demo.
+- Card demo.
+- Cash on service.
+
+Payment workflow:
+1. Customer confirms booking.
+2. Display booking summary.
+3. Select payment method.
+4. Show demo payment screen.
+5. Customer clicks Simulate Successful Payment or Simulate Failed Payment.
+6. Create a payment transaction record.
+7. Update payment status.
+8. Display payment result.
+9. Allow customer to view transaction history.
+
+Payment statuses:
+- PENDING
+- SUCCESS
+- FAILED
+- REFUNDED
+
+Important:
+Do not collect real card numbers, CVVs, UPI PINs or banking passwords.
+
+Do not connect a real payment gateway without explicit configuration.
+
+Clearly display "DEMO PAYMENT – NO REAL MONEY IS CHARGED".
+
+---
+
+# 12. NOTIFICATION SYSTEM
+
+Implement in-app notifications.
+
+Generate notifications when:
+
+- A customer creates a booking.
+- A provider receives a booking request.
+- A provider accepts a booking.
+- A provider rejects a booking.
+- A customer cancels a booking.
+- An appointment is completed.
+- A payment succeeds or fails.
+- An administrator approves a provider.
+
+Include:
+- Notification title.
+- Notification message.
+- Created date.
+- Read/unread status.
+- Related booking ID.
+
+Prepare the architecture for future email notifications.
+
+---
+
+# 13. DATABASE DESIGN – POSTGRESQL
+
+Design a relational database with the following models.
+
+1. User
+2. CustomerProfile
+3. ProviderProfile
+4. ServiceCategory
+5. Service
+6. ProviderAvailability
+7. BlockedDate
+8. Booking
+9. Payment
+10. Review
+11. Favorite
+12. Notification
+13. Complaint
+14. AuditLog
+
+Use appropriate:
+- Primary keys.
+- Foreign keys.
+- Unique constraints.
+- Database indexes.
+- Created timestamps.
+- Updated timestamps.
+- Decimal fields for currency.
+- Proper relationships.
+
+Suggested relationships:
+
+User → CustomerProfile: One-to-One.
+
+User → ProviderProfile: One-to-One.
+
+ProviderProfile → Service: One-to-Many.
+
+ServiceCategory → Service: One-to-Many.
+
+CustomerProfile → Booking: One-to-Many.
+
+ProviderProfile → Booking: One-to-Many.
+
+Service → Booking: One-to-Many.
+
+Booking → Payment: One-to-One or a transaction history relationship if multiple payment attempts are supported.
+
+CustomerProfile → Review: One-to-Many.
+
+ProviderProfile → Review: One-to-Many.
+
+CustomerProfile → Favorite: One-to-Many.
+
+User → Notification: One-to-Many.
+
+Use Django custom user model from the beginning.
+
+Use Django migrations.
+
+Do not store passwords as plain text.
+
+Do not use floating-point fields for money.
+
+---
+
+# 14. DJANGO REST FRAMEWORK API DESIGN
+
+Create versioned REST APIs using:
+
+/api/v1/
+
+Suggested endpoints:
+
+## Authentication
+
+POST /api/v1/auth/register/customer/
+
+POST /api/v1/auth/register/provider/
+
+POST /api/v1/auth/login/
+
+POST /api/v1/auth/token/refresh/
+
+POST /api/v1/auth/logout/
+
+GET /api/v1/auth/me/
+
+## Services
+
+GET /api/v1/services/
+
+GET /api/v1/services/:id/
+
+GET /api/v1/categories/
+
+GET /api/v1/providers/
+
+GET /api/v1/providers/:id/
+
+## Customer
+
+GET /api/v1/customer/dashboard/
+
+GET /api/v1/customer/bookings/
+
+POST /api/v1/customer/bookings/
+
+GET /api/v1/customer/bookings/:id/
+
+PATCH /api/v1/customer/bookings/:id/cancel/
+
+GET /api/v1/customer/favorites/
+
+POST /api/v1/customer/favorites/
+
+GET /api/v1/customer/notifications/
+
+## Provider
+
+GET /api/v1/provider/dashboard/
+
+GET /api/v1/provider/bookings/
+
+POST /api/v1/provider/bookings/:id/accept/
+
+POST /api/v1/provider/bookings/:id/reject/
+
+POST /api/v1/provider/bookings/:id/start/
+
+POST /api/v1/provider/bookings/:id/complete/
+
+GET /api/v1/provider/services/
+
+POST /api/v1/provider/services/
+
+PATCH /api/v1/provider/services/:id/
+
+GET /api/v1/provider/availability/
+
+POST /api/v1/provider/availability/
+
+GET /api/v1/provider/earnings/
+
+## Admin
+
+GET /api/v1/admin/dashboard/
+
+GET /api/v1/admin/customers/
+
+GET /api/v1/admin/providers/
+
+POST /api/v1/admin/providers/:id/approve/
+
+POST /api/v1/admin/providers/:id/reject/
+
+GET /api/v1/admin/bookings/
+
+GET /api/v1/admin/payments/
+
+GET /api/v1/admin/reports/
+
+Implement appropriate HTTP methods, serializers, permissions, pagination, validation and error responses.
+
+Use JWT access and refresh tokens.
+
+Never trust a role supplied by the frontend.
+
+---
+
+# 15. BACKEND PROJECT FOLDER STRUCTURE
+
+Create a clean Django project.
+
+Suggested structure:
+
+backend/
+    manage.py
+    requirements.txt
+    .env.example
+
+    config/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+
+    apps/
+        accounts/
+            models.py
+            serializers.py
+            views.py
+            urls.py
+            permissions.py
+            tests.py
+
+        customers/
+            models.py
+            serializers.py
+            views.py
+            urls.py
+            tests.py
+
+        providers/
+            models.py
+            serializers.py
+            views.py
+            urls.py
+            permissions.py
+            tests.py
+
+        services/
+            models.py
+            serializers.py
+            views.py
+            urls.py
+            filters.py
+            tests.py
+
+        bookings/
+            models.py
+            serializers.py
+            views.py
+            services.py
+            permissions.py
+            urls.py
+            tests.py
+
+        payments/
+            models.py
+            serializers.py
+            views.py
+            urls.py
+            tests.py
+
+        reviews/
+            models.py
+            serializers.py
+            views.py
+            urls.py
+            tests.py
+
+        notifications/
+            models.py
+            serializers.py
+            views.py
+            urls.py
+
+        administration/
+            views.py
+            serializers.py
+            urls.py
+            permissions.py
+            tests.py
+
+Create actual implementation files rather than empty placeholder files.
+
+Use a service layer for important booking and payment business logic.
+
+---
+
+# 16. REACT FRONTEND FOLDER STRUCTURE
+
+Create a modular React application.
+
+frontend/
+    src/
+        assets/
+            images/
+            icons/
+
+        components/
+            common/
+            layout/
+            forms/
+            cards/
+            modals/
+            tables/
+            charts/
+
+        pages/
+            public/
+            auth/
+            customer/
+            provider/
+            admin/
+
+        layouts/
+            PublicLayout.jsx
+            CustomerLayout.jsx
+            ProviderLayout.jsx
+            AdminLayout.jsx
+
+        routes/
+            AppRoutes.jsx
+            ProtectedRoute.jsx
+            RoleRoute.jsx
+
+        services/
+            apiClient.js
+            authService.js
+            bookingService.js
+            providerService.js
+            serviceService.js
+            adminService.js
+            notificationService.js
+
+        context/
+            AuthContext.jsx
+            NotificationContext.jsx
+
+        hooks/
+
+        utils/
+
+        styles/
+            global.css
+            variables.css
+            responsive.css
+
+        App.jsx
+        main.jsx
+
+Do not put the entire application into App.jsx.
+
+Use reusable components.
+
+Use centralized API services.
+
+Use proper React state management.
+
+Use form validation.
+
+Use loading, error and success states.
+
+---
+
+# 17. DEMO DATA AND FUNCTIONALITY
+
+Create realistic demo data for the application.
+
+Include:
+
+- 1 demo administrator.
+- 5 demo customers.
+- 8 demo providers.
+- 8 service categories.
+- At least 15 service records.
+- At least 20 booking records with different statuses.
+- Demo reviews.
+- Demo notifications.
+- Demo payment transactions.
+
+Create professional but fictional names, profile images, service descriptions, prices and addresses.
+
+Use a consistent set of demo providers and services across the entire application.
+
+Do not randomly change the identity of providers between pages.
+
+## Demo accounts
+
+Create clearly documented test accounts:
+
+Administrator:
+admin@fixflow.demo
+
+Customer:
+customer@fixflow.demo
+
+Provider:
+provider@fixflow.demo
+
+Use development-only test credentials and display them in a Demo Login panel.
+
+Never hardcode production passwords or expose credentials in a deployed application.
+
+The demo login feature must work.
+
+All demo actions should update the application's data and remain consistent after navigation or page refresh.
+
+Use browser persistence for preview mode.
+
+Clearly distinguish demo storage from PostgreSQL persistence.
+
+---
+
+# 18. IMPORTANT INTERACTIVE FUNCTIONALITY
+
+The following interactions must work in the preview.
+
+- Landing page navigation.
+- Customer registration.
+- Provider registration.
+- Login and logout.
+- Role-based redirection.
+- Protected pages.
+- Service search.
+- Category filters.
+- Provider search.
+- Provider profile viewing.
+- Booking wizard.
+- Calendar selection.
+- Time-slot selection.
+- Booking confirmation.
+- Booking cancellation.
+- Provider acceptance.
+- Provider rejection.
+- Provider completion.
+- Service creation and editing.
+- Availability management.
+- Favorites.
+- Customer reviews.
+- Notifications.
+- Demo payment.
+- Admin provider approval.
+- Admin provider rejection.
+- Customer management.
+- Category management.
+- Dashboard statistics.
+- Charts.
+- CSV report export.
+- Profile editing.
+- Form validation.
+- Responsive sidebar.
+- Mobile navigation.
+
+Do not leave buttons as decorative elements.
+
+Every button must have a real action or be clearly disabled with an explanation.
+
+Show meaningful success and error messages.
+
+---
+
+# 19. SECURITY AND VALIDATION
+
+Implement proper security architecture.
+
+Requirements:
+
+- JWT authentication.
+- Password hashing using Django's authentication system.
+- Role-based permissions.
+- Protected API endpoints.
+- Server-side input validation.
+- Secure file upload validation.
+- Restricted administrator operations.
+- Customer data isolation.
+- Provider booking isolation.
+- Environment variables for secrets.
+- CORS configuration.
+- Proper error handling.
+- Audit logs for important administrator actions.
+
+Do not store secrets in frontend JavaScript.
+
+Do not trust frontend-only role checks.
+
+Do not expose uploaded identity documents publicly.
+
+Do not allow users to access another user's private records.
+
+---
+
+# 20. TESTING REQUIREMENTS
+
+Prepare tests for:
+
+Authentication:
+- Valid login.
+- Invalid login.
+- Duplicate registration.
+- Role restrictions.
+
+Customer:
+- Create booking.
+- Cancel booking.
+- Access own booking.
+- Reject access to another customer's booking.
+
+Provider:
+- Accept booking.
+- Reject booking.
+- Prevent unauthorized booking access.
+- Update service.
+
+Admin:
+- Approve provider.
+- Reject provider.
+- Manage categories.
+- Access reports.
+
+Booking:
+- Prevent past appointments.
+- Prevent double booking.
+- Prevent invalid status transitions.
+- Prevent booking inactive providers.
+
+Payment:
+- Successful demo payment.
+- Failed demo payment.
+- Prevent duplicate payment processing.
+
+Use Django tests and frontend tests where practical.
+
+Provide a Postman collection with example requests and responses.
+
+---
+
+# 21. DOCUMENTATION AND LEARNING
+
+Create a README.md containing:
+
+1. Project introduction.
+2. Problem statement.
+3. Objectives.
+4. Features.
+5. Technology stack.
+6. Application architecture.
+7. Database relationships.
+8. Frontend folder structure.
+9. Backend folder structure.
+10. API endpoint documentation.
+11. Installation instructions.
+12. Environment variable setup.
+13. PostgreSQL setup.
+14. Django setup.
+15. React setup.
+16. Test instructions.
+17. Demo credentials.
+18. Screenshots section.
+19. Future improvements.
+
+Also create:
+
+- API_DOCUMENTATION.md
+- DATABASE_SCHEMA.md
+- SETUP_GUIDE.md
+- TESTING_GUIDE.md
+- POSTMAN_COLLECTION.json
+
+Explain the important files and the purpose of each module.
+
+For important features, provide a simple explanation of how data travels:
+
+React page → API service → Django view → Serializer → Model → PostgreSQL → API response → React UI.
+
+---
+
+# 22. DEVELOPMENT ORDER
+
+Build the application in the following order.
+
+PHASE 1:
+- Project setup.
+- Design system.
+- Public website.
+- Landing page.
+- Service listings.
+- Service details.
+- Provider listings.
+
+PHASE 2:
+- Customer registration.
+- Provider registration.
+- Login.
+- Authentication.
+- Role-based navigation.
+
+PHASE 3:
+- Customer dashboard.
+- Customer profile.
+- Service browsing.
+- Favorites.
+- Booking wizard.
+- Booking history.
+
+PHASE 4:
+- Provider dashboard.
+- Provider profile.
+- Service management.
+- Availability management.
+- Booking requests.
+- Earnings and reviews.
+
+PHASE 5:
+- Administrator dashboard.
+- Customer management.
+- Provider approval.
+- Service categories.
+- Booking management.
+- Payments.
+- Reports.
+
+PHASE 6:
+- Complete booking workflows.
+- Demo payment.
+- Notifications.
+- Reviews.
+- Security and validation.
+
+PHASE 7:
+- Testing.
+- Bug fixing.
+- Responsive testing.
+- Documentation.
+- Final quality review.
+
+Do not skip phases.
+
+---
+
+# 23. FINAL QUALITY REQUIREMENTS
+
+Before considering the application complete, verify:
+
+1. All public pages load.
+2. All customer pages load.
+3. All provider pages load.
+4. All administrator pages load.
+5. Role-based navigation works.
+6. Registration and login work.
+7. Demo accounts work.
+8. Booking workflow works end to end.
+9. Provider approval works.
+10. Provider booking management works.
+11. Admin management works.
+12. Demo payments work.
+13. Notifications update.
+14. Reviews work.
+15. Search and filtering work.
+16. Dashboard data is calculated correctly.
+17. No broken images.
+18. No broken navigation links.
+19. No console errors.
+20. Mobile responsiveness works.
+
+Do not report a test as passed unless it has actually been tested.
+
+If a feature cannot be implemented in the current environment, explain the limitation and provide the necessary source code or integration instructions.
+
+---
+
+# 24. HOW TO WORK WITH ME
+
+I am a beginner learning Full Stack Python development.
+
+I want to understand how the application is built, not simply receive generated code.
+
+Follow these instructions:
+
+1. Build one phase at a time.
+2. Maintain the same project architecture throughout development.
+3. Do not randomly redesign existing pages.
+4. Do not delete working functionality when adding new features.
+5. Explain which files were created or modified.
+6. Explain what each important file does.
+7. Explain the workflow of every major feature.
+8. Identify frontend code separately from backend code.
+9. Tell me which features are currently demo-only.
+10. Tell me which features require the actual Django/PostgreSQL backend.
+11. Do not invent completed functionality.
+12. Fix build errors before moving to the next phase.
+13. Keep the code readable and maintainable.
+14. Do not generate a giant single-file application.
+15. Preserve the existing working features when updating the application.
+
+If the entire application cannot be generated in one response, continue incrementally while maintaining all previous code and project decisions.
+
+## START NOW
+
+Start by creating:
+
+1. Complete application architecture.
+2. React frontend folder structure.
+3. Django backend folder structure.
+4. Global design system.
+5. Public landing page.
+6. Explore Services page.
+7. Service Details page.
+8. Provider Listing page.
+9. Login page.
+10. Customer Registration page.
+11. Provider Registration page.
+
+Create the actual working pages and navigation, not just a written description.
+
+Then continue with the Customer Portal, Service Provider Portal and Administrator Portal.
+
+Make the result a professional, practical, responsive and interactive FixFlow application that I can learn from, test and later develop into a real full-stack Python project.

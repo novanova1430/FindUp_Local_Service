@@ -1,0 +1,206 @@
+{
+  "info": {
+    "name": "FixFlow REST API Collection",
+    "description": "Comprehensive Postman collection for testing the FixFlow Django 5 REST backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "1. Login (Customer)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"customer@fixflow.demo\",\n  \"password\": \"CustomerPass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login/",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login", ""]
+            }
+          }
+        },
+        {
+          "name": "2. Login (Provider)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"provider@fixflow.demo\",\n  \"password\": \"ProviderPass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login/",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login", ""]
+            }
+          }
+        },
+        {
+          "name": "3. Login (Admin)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@fixflow.demo\",\n  \"password\": \"AdminPass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login/",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login", ""]
+            }
+          }
+        },
+        {
+          "name": "4. Register Customer",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"newcustomer@example.com\",\n  \"password\": \"CustomerPass123!\",\n  \"password_confirm\": \"CustomerPass123!\",\n  \"first_name\": \"Michael\",\n  \"last_name\": \"Scott\",\n  \"phone\": \"+1-555-0100\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register/customer/",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register", "customer", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Services & Catalog",
+      "item": [
+        {
+          "name": "List Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/services/categories/",
+              "host": ["{{baseUrl}}"],
+              "path": ["services", "categories", ""]
+            }
+          }
+        },
+        {
+          "name": "List Services",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/services/",
+              "host": ["{{baseUrl}}"],
+              "path": ["services", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Create Booking (Customer)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"provider_id\": 1,\n  \"service_id\": 1,\n  \"booking_date\": \"2026-11-20\",\n  \"time_slot\": \"10:00 AM\",\n  \"street_address\": \"123 Main Street\",\n  \"city\": \"Metropolis\",\n  \"state\": \"NY\",\n  \"zip_code\": \"10001\",\n  \"notes\": \"Urgent inspection required\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bookings/",
+              "host": ["{{baseUrl}}"],
+              "path": ["bookings", ""]
+            }
+          }
+        },
+        {
+          "name": "Accept Booking (Provider)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"ACCEPT\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bookings/1/action/",
+              "host": ["{{baseUrl}}"],
+              "path": ["bookings", "1", "action", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Administration",
+      "item": [
+        {
+          "name": "Admin Dashboard Stats",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/administration/stats/",
+              "host": ["{{baseUrl}}"],
+              "path": ["administration", "stats", ""]
+            }
+          }
+        },
+        {
+          "name": "Verify Provider Application",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{accessToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"APPROVED\",\n  \"notes\": \"All state licenses and certifications verified successfully.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/administration/providers/1/verify/",
+              "host": ["{{baseUrl}}"],
+              "path": ["administration", "providers", "1", "verify", ""]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000/api/v1"
+    },
+    {
+      "key": "accessToken",
+      "value": ""
+    }
+  ]
+}
